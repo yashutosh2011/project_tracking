@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTrackingDB", "ProjectTrackingDB\ProjectTrackingDB.csproj", "{300D317D-507F-462E-AFE9-7A84BC915B4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTrackingServices", "ProjectTrackingServices\ProjectTrackingServices.csproj", "{B368AE37-2E2E-45FF-B4A5-55CD8DEEACBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{300D317D-507F-462E-AFE9-7A84BC915B4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{300D317D-507F-462E-AFE9-7A84BC915B4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{300D317D-507F-462E-AFE9-7A84BC915B4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{300D317D-507F-462E-AFE9-7A84BC915B4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B368AE37-2E2E-45FF-B4A5-55CD8DEEACBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B368AE37-2E2E-45FF-B4A5-55CD8DEEACBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B368AE37-2E2E-45FF-B4A5-55CD8DEEACBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B368AE37-2E2E-45FF-B4A5-55CD8DEEACBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
