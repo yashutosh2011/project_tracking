@@ -9,7 +9,7 @@ using System.Web.Http.Cors;
 
 namespace ProjectTrackingServices.Controllers
 {
-    [EnableCors(origins: "http://localhost:50651", headers:"*",methods:"*")]
+    [EnableCors(origins: "*", headers:"*",methods:"*")]
     public class PTEmployeesController : ApiController
     {
         // GET: api/PTEmployees

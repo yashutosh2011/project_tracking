@@ -1,14 +1,14 @@
 ﻿(function () {
-    var ManagerCommentsController = function ($scope, $http) {
-        var managerComments = function (serviceResp) {
-            $scope.Comments = serviceResp.data;
+    var ManagerCommentsController = function ($scope, managerCommentService) {
+        var managerComments = function (data) {
+            $scope.Comments = data;
         };
         var errorDetails = function (serviceResp) {
             $scope.Error = "Something went wrong ??";
         };
-        $http.get("http://localhost:50651/api/ptmanagercomments/1")
+        managerCommentService.managerComments()
             .then(managerComments, errorDetails);
         $scope.Title = "Manager comments Page";
     };
-    app.controller("ManagerCommentsController", ManagerCommentsController);
+    app.controller("ManagerCommentsController", ["$scope", "managerCommentService", ManagerCommentsController]);
 }());

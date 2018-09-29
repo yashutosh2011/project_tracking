@@ -1,13 +1,13 @@
 ﻿(function () {
-    var ProjectsTasksController = function ($scope,$http) {
-        var ProjectTasks = function (serviceResp) {
-            $scope.Tasks = serviceResp.data;
+    var ProjectsTasksController = function ($scope, projectTaskService) {
+        var ProjectTasks = function (data) {
+            $scope.Tasks = data;
         };
         var errorDetails = function (serviceResp) {
             $scope.Error = "Something went wrong !! ";
         };
-        $http.get("http://localhost:50651/api/ptprojecttasks/2").then(ProjectTasks, errorDetails);
+        projectTaskService.projectTasks().then(ProjectTasks, errorDetails);
         $scope.Title = "Project Task Page";
     };
-    app.controller('ProjectsTasksController', ProjectsTasksController);
+    app.controller('ProjectsTasksController', ["$scope", "projectTaskService", ProjectsTasksController]);
 }());

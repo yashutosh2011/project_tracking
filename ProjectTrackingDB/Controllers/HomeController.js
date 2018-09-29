@@ -4,5 +4,5 @@
         $scope.CompanyName = "Fictious Company";
         $scope.Title = "Project Tracking HomePage";
     };
-    app.controller("HomeController", HomeController);
+    app.controller("HomeController",["$scope", HomeController]);
 }());

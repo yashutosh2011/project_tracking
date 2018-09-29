@@ -9,7 +9,7 @@ using System.Web.Http.Cors;
 
 namespace ProjectTrackingServices.Controllers
 {
-    [EnableCors(origins: "http://localhost:2464", headers: "*", methods: "*")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class PTProjectsController : ApiController
     {
         // GET: api/PTProjects
@@ -31,18 +31,30 @@ namespace ProjectTrackingServices.Controllers
         }
 
         // POST: api/PTProjects
-        public void Post([FromBody]string value)
+        [Route("api/ptprojects")]
+        public HttpResponseMessage Post(Project p)
         {
+            var projects = ProjectsRepository.InsertProjects(p);
+            HttpResponseMessage responce = Request.CreateResponse(HttpStatusCode.OK, projects);
+            return responce;
         }
 
         // PUT: api/PTProjects/5
-        public void Put(int id, [FromBody]string value)
+        [Route("api/ptprojects")]
+        public HttpResponseMessage Put(Project p)
         {
+            var projects = ProjectsRepository.UpdateProjects(p);
+            HttpResponseMessage responce = Request.CreateResponse(HttpStatusCode.OK, projects);
+            return responce;
         }
 
         // DELETE: api/PTProjects/5
-        public void Delete(int id)
+        [Route("api/ptprojects")]
+        public HttpResponseMessage Delete(Project p)
         {
+            var projects = ProjectsRepository.DeleteProjects(p);
+            HttpResponseMessage responce = Request.CreateResponse(HttpStatusCode.OK, projects);
+            return responce;
         }
     }
 }

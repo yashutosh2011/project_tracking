@@ -22,5 +22,33 @@ namespace ProjectTrackingServices.Models
                         select projects;
             return query.SingleOrDefault();
         }
+        public static List<Project> InsertProjects(Project p)
+        {
+            dataContext.Projects.Add(p);
+            dataContext.SaveChanges();
+            return GetAllProjects();
+        }
+        public static List<Project> UpdateProjects(Project p)
+        {
+            var project = (from Projects in dataContext.Projects
+                          where Projects.ProjectID == p.ProjectID
+                          select Projects).SingleOrDefault();
+            project.ProjectName = p.ProjectName;
+            project.StartDate = p.StartDate;
+            project.EndDate = p.EndDate;
+            project.ClientName = p.ClientName;
+            dataContext.SaveChanges();
+            return GetAllProjects();
+        }
+
+        public static List<Project> DeleteProjects(Project p)
+        {
+            var project = (from Projects in dataContext.Projects
+                           where Projects.ProjectID == p.ProjectID
+                           select Projects).SingleOrDefault();
+            dataContext.Projects.Remove(project);
+            dataContext.SaveChanges();
+            return GetAllProjects();
+        }
     }
 }

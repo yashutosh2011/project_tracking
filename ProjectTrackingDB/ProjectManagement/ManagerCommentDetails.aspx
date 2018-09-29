@@ -15,6 +15,7 @@
     </script>
     <script src="../Scripts/app.js">
     </script>
+    <script src="../Services/ManagerCommentsService.js"></script>
     <script src="../Controllers/ManagerCommentsController.js"></script>
 </head>
 <body>
@@ -31,10 +32,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="success">
-                        <td>{{Comments.managerCommentID}}
+                    <tr class="success" ng-repeat="comments in Comments">
+                        <td>{{comments.managerCommentID}}
                         </td>
-                        <td>{{Comments.comments}}
+                        <td>{{comments.comments}}
                         </td>
                     </tr>
                 </tbody>

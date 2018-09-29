@@ -1,27 +1,11 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EmployeeDetails.aspx.cs" Inherits="ProjectTrackingDB.Employees.EmployeeDetails" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml" ng-app="ProjectTrackingModule">
-<head runat="server">
-    <title>Employee Details</title>
-    <script src="../Scripts/jquery-2.1.0.min.js"></script>
-    <link href="../CSS/amelia.bootstrap.min.css" rel="stylesheet" />
-    <link href="../CSS/Site.css" rel="stylesheet" />
-    <script src="../Scripts/angular.min.js">
-    </script>
-    <script src="../Scripts/bootstrap.min.js">
-    </script>
-    <script src="../Scripts/app.js">
-    </script>
-    <script src="../Controllers/EmployeesController.js"></script>
-</head>
- <body ng-controller="EmployeesController">
     <h1>{{Title}}</h1>
+<hr />
      <form name="searchEmployeeForm" ng-submit="SearchEmployee(EmployeeName)">
          Enter Employee name or charecter to search - <input type="text" required="required" placeholder="Enter Employee ID" ng-model="EmployeeName" />
          <input type="submit" value="Search Emplpoyee" />
      </form>
+<hr />
     <table class="table table-striped table-hover" ng-show="Employees">
     <thead>
         <tr class="info">
@@ -46,7 +30,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr class="success" ng-repeat="Employee in Employees |limitTo:5| orderBy:'-employeeName'">
+        <tr class="success" ng-repeat="Employee in Employees |limitTo:20| orderBy:'-employeeName'" ng-show="Employees">
             <td>
                 {{Employee.employeeID}}
             </td>
@@ -68,5 +52,3 @@
         </tr>
     </tbody>
 </table>
-</body>
-</html>

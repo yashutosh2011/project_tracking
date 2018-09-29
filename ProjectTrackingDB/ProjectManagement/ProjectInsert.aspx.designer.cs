@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectTrackingDB.Tasks {
+namespace ProjectTrackingDB.ProjectManagement {
     
     
-    public partial class ProjectTaskDetails {
+    public partial class ProjectInsert {
     }
 }
